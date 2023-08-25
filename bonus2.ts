@@ -3,6 +3,50 @@ import promptSync from 'prompt-sync';
 
 const prompt = promptSync();
 
+let account = "Mia";
+
+function myBalance() {
+    
+}
+
+function switchAccount() {
+    
+}
+
+function createNewAccount() {
+    
+}
+
+function chooseAccountMenu() {
+    console.clear();
+    console.log('==========================');
+    console.log(`Current Account: ${account}`);
+    console.log('1. My balance');
+    console.log('2. Switch account');
+    console.log('3. Create new account');
+    console.log('4. Exit');
+
+    const selection = prompt('Select alternative: ');
+    
+    switch (selection) {
+        case '1':
+            myBalance();
+            break;
+        case '2':
+            switchAccount();
+            break;
+        case '3':
+            createNewAccount();
+            break;
+        case '4':
+            process.exit(0);
+            break;
+        default:
+            process.exit(0);
+            break;
+    }
+}
+
 let balance = 0;
 
 function deposit() {
@@ -13,10 +57,6 @@ function deposit() {
 function withdraw() {
     const amount = prompt('Enter amount: ');
     balance -= parseInt(amount);
-}
-
-function exit() {
-    process.exit(0);
 }
 
 function mainMenu() {
@@ -37,7 +77,7 @@ function mainMenu() {
             withdraw();
             break;
         case '3':
-            exit();
+            process.exit(0);
             break;
         default:
             process.exit(0);
@@ -46,7 +86,7 @@ function mainMenu() {
 }
 
 while(true){
-    mainMenu();
+    chooseAccountMenu();
 }
 
 // ts-node bonus2.ts
