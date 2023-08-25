@@ -15,12 +15,17 @@ function withdraw() {
     balance -= parseInt(amount);
 }
 
+function exit() {
+    process.exit(0);
+}
+
 function mainMenu() {
     console.clear();
     console.log('==========================');
     console.log(`Current balance: ${balance}`);
     console.log('1. Deposit');
     console.log('2. Withdraw');
+    console.log('3. Exit');
 
     const selection = prompt('Select alternative: ');
     
@@ -31,6 +36,9 @@ function mainMenu() {
         case '2':
             withdraw();
             break;
+        case '3':
+            exit();
+            break;
         default:
             process.exit(0);
             break;
@@ -40,3 +48,5 @@ function mainMenu() {
 while(true){
     mainMenu();
 }
+
+// ts-node bonus2.ts
